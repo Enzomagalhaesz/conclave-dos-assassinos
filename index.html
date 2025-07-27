@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Conclave dos Assassinos</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'UnifrakturCook', cursive;
+      background-image: url('https://i.imgur.com/EGlGzU2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #e2d4b7;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #f2c94c;
+    }
+    nav {
+      background-color: rgba(10, 10, 10, 0.8);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: #e2d4b7;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      color: #f2c94c;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(15, 15, 15, 0.85);
+      margin-top: 20px;
+      border: 2px solid #5c4221;
+      border-radius: 12px;
+    }
+    .hidden {
+      display: none;
+    }
+    .secret-input {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #1e1e1e;
+      color: #e2d4b7;
+      border: 1px solid #f2c94c;
+      font-family: monospace;
+    }
+    .button {
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #f2c94c;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>A Conclave dos Assassinos</h1>
+    <audio controls autoplay loop>
+      <source src="https://example.com/verissimo.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+  </header>
+
+  <nav>
+    <a href="#mural">Mural</a>
+    <a href="#reliquias">Relíquias</a>
+    <a href="#personagens">Personagens</a>
+    <a href="#secretos">Arquivos Secretos</a>
+  </nav>
+
+  <section id="mural">
+    <h2>Mural de Missões</h2>
+    <p>Adicione aqui missões ativas, concluídas, pistas e recompensas.</p>
+  </section>
+
+  <section id="reliquias">
+    <h2>Relíquias</h2>
+    <p>Liste aqui os artefatos especiais descobertos, com imagens e poderes.</p>
+  </section>
+
+  <section id="personagens">
+    <h2>Personagens</h2>
+    <p>Inclua fichas resumidas dos jogadores e NPCs notáveis.</p>
+  </section>
+
+  <section id="secretos">
+    <h2>Arquivos Secretos</h2>
+    <p>Área protegida. Digite a senha para acessar:</p>
+    <input type="password" id="senha" class="secret-input" placeholder="Digite a senha..." />
+    <button onclick="verificarSenha()" class="button">Acessar</button>
+    <div id="conteudo-secreto" class="hidden">
+      <h3>Conteúdo Revelado</h3>
+      <p>Coloque aqui os documentos, áudios e imagens descobertos pela Conclave.</p>
+    </div>
+  </section>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById('senha').value;
+      if (senha === 'Nyx') {
+        document.getElementById('conteudo-secreto').classList.remove('hidden');
+      } else {
+        alert('Senha incorreta. Tente novamente.');
+      }
+    }
+  </script>
+</body>
+</html>
